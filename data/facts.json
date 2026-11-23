@@ -1,16 +1,16 @@
 {
   "control_networks": [
-    {"id": "NET-A-1", "crs": "LOCAL-A", "version": 1, "common_points": {"CP-1": [0, 0], "CP-2": [100, 0], "CP-3": [0, 100]}},
-    {"id": "NET-B-1", "crs": "LOCAL-B", "version": 1, "common_points": {"CP-4": [0, 0], "CP-5": [100, 0], "CP-6": [0, 100]}},
-    {"id": "NET-SITE-2", "crs": "SITE", "version": 2, "common_points": {"CP-1": [1000, 1000], "CP-2": [1100, 1000], "CP-4": [1201, 1000], "CP-5": [1301, 1000]}}
+    {"id": "NET-A-1", "crs": "LOCAL-A", "unit": "mm", "version": 1, "common_points": {"CP-1": [0, 0], "CP-2": [10000, 0], "CP-3": [0, 10000]}},
+    {"id": "NET-B-1", "crs": "LOCAL-B", "unit": "mm", "version": 1, "common_points": {"CP-4": [0, 0], "CP-5": [10000, 0], "CP-6": [0, 10000]}},
+    {"id": "NET-SITE-2", "crs": "SITE", "unit": "m", "version": 2, "common_points": {"CP-1": [1000, 1000], "CP-2": [1010, 1000], "CP-3": [1000, 1010], "CP-4": [1010.1, 1000], "CP-5": [1020.1, 1000], "CP-6": [1010.1, 1010]}}
   ],
   "zones": [
-    {"id": "ZONE-E", "owner": "TEAM-A", "start_m": 0, "end_m": 10, "coverage_target_m2": 100, "points": [[0,0],[10,0],[10,10],[0,10]], "network": "NET-A-1"},
-    {"id": "ZONE-W", "owner": "TEAM-B", "start_m": 10, "end_m": 20, "coverage_target_m2": 100, "points": [[10,0],[20,0],[20,10],[10,10]], "network": "NET-B-1"}
+    {"id": "ZONE-E", "owner": "TEAM-A", "start_m": 0, "end_m": 10, "coverage_target_m2": 100, "points": [[0,0],[10000,0],[10000,10000],[0,10000]], "network": "NET-A-1"},
+    {"id": "ZONE-W", "owner": "TEAM-B", "start_m": 10, "end_m": 20, "coverage_target_m2": 100, "points": [[0,0],[10000,0],[10000,10000],[0,10000]], "network": "NET-B-1"}
   ],
   "feature_observations": [
-    {"id": "F-A-01", "zone": "ZONE-E", "shape": [[9.8,4],[10.2,4]], "source": "SCAN-A-5", "review": "pending"},
-    {"id": "F-B-09", "zone": "ZONE-W", "shape": [[10.1,4],[10.5,4]], "source": "SCAN-B-7", "review": "pending"}
+    {"id": "F-A-01", "zone": "ZONE-E", "shape": [[9800,4000],[10020,4000]], "source": "SCAN-A-5", "review": "pending"},
+    {"id": "F-B-09", "zone": "ZONE-W", "shape": [[0,4000],[300,4000]], "source": "SCAN-B-7", "review": "pending"}
   ],
   "design_references": [{"drawing": "D-22", "zones": ["ZONE-E", "ZONE-W"], "state": "pinned", "edition": "E3"}]
 }
